@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      scroll-behavior: smooth;
+      background: #fdfdfd;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0077ff, #00c8ff);
+      color: #fff;
+      text-align: center;
+      padding: 120px 20px;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #fff;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      z-index: 100;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0077ff;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #00c8ff;
+    }
+
+    section {
+      padding: 80px 20px;
+      max-width: 1000px;
+      margin: auto;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 1s ease;
+    }
+
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .project-card {
+      flex: 1 1 calc(33% - 20px);
+      background: #f4f4f4;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .contact-form button {
+      padding: 12px 24px;
+      background: #0077ff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .contact-form button:hover {
+      background: #005ccc;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #f1f1f1;
+      margin-top: 60px;
+    }
+
+    @media (max-width: 768px) {
+      .project-card {
+        flex: 1 1 100%;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header >
+  <h1>pradeeptadi</h1>
+  <p>Web Developer • Cybersecurity • Blogger</p>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+  <a href="{% url 'post_list' %}">Blog</a>
+</nav>
+
+<section id="about" class="reveal">
+  <h2>About Me</h2>
+  <p>I am a full-stack developer and security enthusiast with a passion for clean code and scalable applications. I specialize in web development, ethical hacking, and building smart systems.</p>
+</section>
+
+<section id="projects" class="reveal">
+  <h2>Projects</h2>
+  <div class="projects">
+    <div class="project-card">
+      <h3>portfolio</h3>
+      <p>Creating a professional portfolio using AI tools is becoming increasingly popular and efficient. These tools leverage AI to help you with everything from initial design suggestions and content generation to SEO optimization and mobile responsiveness.</p>
+      <a href="https://github.com/Pradeeptadi/photography-portfolio-.git" target="_blank">GitHub →</a>
+    </div>
+    <div class="project-card">
+      <h3>Blog App in Django</h3>
+      <p> Overview:
+This Blog App is a full-featured blogging platform built using the Django web framework. It allows users to read blog posts, view images, and leave comments. The admin can create, edit, and delete posts through Django’s admin panel.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="reveal">
+  <h2>Contact Me</h2>
+  <form method="post" class="contact-form">
+    {% csrf_token %}
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2025 Your Name. All rights reserved.</p>
+</footer>
+
+<script>
+  // Animation on scroll
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(section => observer.observe(section));
+</script>
+
+</body>
+</html>

@@ -1,0 +1,138 @@
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #194d9b;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 30px auto;
+    background-color: rgb(172, 16, 16);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.blog-post {
+    margin-bottom: 30px;
+    border-bottom: 1px solid #a12929;
+    padding-bottom: 20px;
+}
+
+.blog-post h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.blog-post img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.blog-post p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f0f2f5;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #9daba5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.blog-post h1 {
+    font-size: 2.5rem;
+    color: #021931;
+}
+
+.date {
+    color: #e3d0d0;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.post-image {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.content {
+    line-height: 1.7;
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+}
+
+.comment-section {
+    border-top: 1px solid #420874;
+    padding-top: 20px;
+}
+
+.comment-form {
+    margin-bottom: 30px;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #186b40;
+    font-size: 1rem;
+}
+
+.comment-form button {
+    background: #08436a;
+    color: rgb(222, 209, 209);
+    padding: 10px 20px;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comment-form button:hover {
+    background: #2980b9;
+}
+
+.comment {
+    background: #995bf6;
+    border-left: 4px solid #042a45;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.comment-date {
+    display: block;
+    color: #0f1b2b;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+}
